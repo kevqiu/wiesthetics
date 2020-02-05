@@ -1,17 +1,27 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby + Node.js (TypeScript) API',
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'Gatsby + Node.js (TypeScript) API',
-        short_name: 'Gatbsy + Node.js (TypeScript)',
-        start_url: '/',
-        icon: 'src/images/gatsby-icon.png',
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `wi-esthetics`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#f5cdf7`,
+        theme_color: `#f5cdf7`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-material-ui`,
   ],
 };

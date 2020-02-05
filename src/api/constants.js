@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://wiesthetics-api.herokuapp.com/api/v1/';
