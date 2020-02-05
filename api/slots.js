@@ -30,8 +30,8 @@ const getAll = async (req, res) => {
     query += 'ORDER BY date DESC'
 
     try {
-        const { rows } = await db.query(query, queryParams);
-        res.json(rows);
+        const data = await db.any(query, queryParams);
+        res.json(data);
     }
     catch (e) {
         res.status(400).json({ error: e.stack });
@@ -53,11 +53,11 @@ const postSlot = async (req, res) => {
         return;
     }
 
-    let query = 'INSERT INTO slots (booked, date) VALUES (false, $1)';
+    let query = 'INSERT INTO slots (booked, date) VALUES (false, $1) RETURNING ID';
 
     try {
-        await db.query(query, [dateObj.toISOString()]);
-        res.json({});
+        const data = await db.one(query, [dateObj.toISOString()]);
+        res.json(data);
     } catch (e) {
         res.status(400).json({ error: e.stack });
     }

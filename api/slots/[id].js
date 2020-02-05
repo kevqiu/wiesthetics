@@ -20,12 +20,12 @@ const getSlotById = async (req, res) => {
     let query = 'SELECT * FROM slots WHERE id = $1 LIMIT 1';
 
     try {
-        const { rows, rowCount } = await db.query(query, [id]);
-        if (rowCount === 0) {
-            res.status(404).json({ error: `no slots found with id = ${id}` });
+        const data = await db.any(query, [id]);
+        if (data.length === 0) {
+            res.status(404).json({ error: `no slot found with id = ${id}` });
             return;
         }
-        res.json(rows[0]);
+        res.json(data[0]);
     } catch (e) {
         res.status(400).json({ error: e.stack });
     }
@@ -45,12 +45,12 @@ const patchSlot = async (req, res) => {
     let query = 'UPDATE slots SET booked = $1 WHERE id = $2';
 
     try {
-        const { rowCount } = await db.query(query, [booked, id]);
+        const { rowCount } = await db.result(query, [booked, id]);
         if (rowCount === 0) {
-            res.status(404).json({ error: `no slots found with id = ${id}` });
+            res.status(404).json({ error: `no slot found with id = ${id}` });
             return;
         }
-        res.json({});
+        res.json();
     } catch (e) {
         res.status(400).json({ error: e.stack });
     }
@@ -60,16 +60,16 @@ const patchSlot = async (req, res) => {
  * DELETE by ID
  */
 const deleteSlot = async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.query;
     let query = 'DELETE FROM slots WHERE id = $1';
 
     try {
-        const { rowCount } = await db.query(query, [id]);
+        const { rowCount } = await db.result(query, [id]);
         if (rowCount === 0) {
-            res.status(404).json({ error: `no slots found with id = ${id}` });
+            res.status(404).json({ error: `no slot found with id = ${id}` });
             return;
         }
-        res.json({});
+        res.json();
     } catch (e) {
         res.status(400).json({ error: e.stack });
     }
