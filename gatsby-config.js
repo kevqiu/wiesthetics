@@ -23,5 +23,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-material-ui`,
+    // {
+    //   resolve: `gatsby-plugin-routes`,
+    //   options: {
+    //     // this is the path to your routes configuration file
+    //     path: `${__dirname}/src/routes.js`,
+    //   },
+    // },
   ],
 };

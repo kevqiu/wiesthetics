@@ -10,3 +10,9 @@ if (hostname === 'localhost') {
 }
 
 export const API_BASE_URL = `${baseUrl}/api`;
+
+
+export const Endpoint = Object.freeze({
+    SLOTS: 'slots',
+    BOOKINGS: 'bookings'
+});

@@ -13,6 +13,7 @@
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-offline": "^3.0.18",
     "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-routes": "^1.0.0",
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-sharp": "^2.3.2",
@@ -24,6 +25,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
     "prettier": "^1.19.1"
   },
   "scripts": {
