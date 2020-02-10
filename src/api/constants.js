@@ -1,7 +1,8 @@
+import window from 'global/window';
+
 const hostname = window && window.location && window.location.hostname;
 let baseUrl = '';
 
-console.log(hostname)
 if (hostname === 'localhost') {
     baseUrl = 'http://localhost:3000';
 } else if (hostname === 'wiesthetics.now.sh') {

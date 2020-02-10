@@ -16,6 +16,7 @@
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-sharp": "^2.3.2",
+    "global": "^4.4.0",
     "pg-promise": "^10.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
