@@ -1,5 +1,6 @@
 {
   "env": {
+    "NODE_ENV": "@node_env",
     "PG_CONNECTION_STRING": "@pg_connection_string"
   }
 }

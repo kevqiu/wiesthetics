@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 // import Image from '../components/image';
 import SEO from '../components/seo';
-import { getRequest } from '../api/client';
+import { getAllRequest } from '../api/client';
 
 import './styles.css';
 
@@ -13,9 +13,9 @@ const IndexPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getRequest('slots');
+      const response = await getAllRequest('slots');
       const data = await response.json();
-      setText(data.toString());
+      setText(JSON.stringify(data));
     };
     fetchData();
   }, []);
