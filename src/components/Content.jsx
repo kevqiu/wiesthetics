@@ -2,8 +2,11 @@ import React, {useState} from 'react'
 import ServiceCard from './ServiceCard'
 import { Grid } from '@material-ui/core';
 import serviceList from './constants'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Form from './stepform/FormUserDetail'
+import './animation.css';
 
 const Content = () => {
     const [toggled, toggle] = useState(false);
@@ -20,12 +23,30 @@ const Content = () => {
     }
 
     return (
-        <Grid container spacing={2}>
-            {serviceList.map(serviceListobj => getServiceList(serviceListobj))} 
-            {toggled && 
-                <Form/>
-            }               
-        </Grid>
+        <>
+            {!toggled &&
+                <div class="fadeIn">
+                    <Typography component="div">
+                        <Box fontSize={40} fontWeight="fontWeightMedium">
+                            Select a Style
+                        </Box>
+                    </Typography>
+                    <Grid container spacing={2} style={{paddingTop: 40}}>
+                        {serviceList.map(serviceListobj => getServiceList(serviceListobj))} 
+                    </Grid>
+                </div>
+            }
+            {toggled &&
+                <div class="fadeIn">
+                    <Typography component="div">
+                        <Box fontSize={40} fontWeight="fontWeightMedium">
+                            Details
+                        </Box>
+                    </Typography>
+                    <Form/>
+                </div>
+            }
+        </>           
     )
 }
 

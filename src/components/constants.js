@@ -68,9 +68,9 @@ export default [
         title: 'Coloured Ombré Fill',
         description: '$45 @ 1 - 1.5 hours',
     },
-    {
-        id: 11,
-        title: 'Extras',
-        description: 'nail designs : may vary, dm for exact quote\n designer charms : $5\n 3D flowers : $5+\n extra length : $10+\n removal w/ new set : $15\n removal $20',
-    },
+    // {
+    //     id: 11,
+    //     title: 'Extras',
+    //     description: 'nail designs : may vary, dm for exact quote\n designer charms : $5\n 3D flowers : $5+\n extra length : $10+\n removal w/ new set : $15\n removal $20',
+    // },
   ];

@@ -1,27 +1,21 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-}));
+const formStyle = {
+    margin: "10px",
+};
 
 export default function Form() {
-    const classes = useStyles();
 
     return (
         <form>
-            <div>
-                <TextField required id="outlined-name" label="Name" variant="outlined" color="primary"/>
-                <TextField required id="outlined-number" label="Phone Number" type="number" variant="outlined" color="primary"/>
-                <TextField required id="outlined-email" label="Email" variant="outlined" color="primary"/>
-                <TextField required id="outlined-ig" label="Instagram" variant="outlined" color="primary"/>
-            </div>
+            <Grid container direction="column" justify="center" alignItems="stretch">
+                <TextField required id="outlined-name" label="Name" variant="outlined" color="primary" style={formStyle}/>
+                <TextField required id="outlined-number" label="Phone Number" type="tel" variant="outlined" color="primary" style={formStyle}/>
+                <TextField required id="outlined-email" label="Email" variant="outlined" color="primary" style={formStyle}/>
+                <TextField required id="outlined-ig" label="Instagram" variant="outlined" color="primary" style={formStyle}/>
+            </Grid>
         </form>
     )
 }

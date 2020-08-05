@@ -1,0 +1,13 @@
+.square {
+    width: 100%;
+}
+  
+.square:after {
+    display: block;
+    padding-bottom: 100%;
+}
+
+.overlay-true {
+    background-color: black;
+    opacity: 0.5;
+}
