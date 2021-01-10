@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
   },
   gridList: {
-    width: '450',
-    height: '450',
+    width: '1000px',
+    height: '1000px',
   },
   imgSizeMobile: {
     width: '350px',
@@ -93,56 +93,37 @@ export default function ImageGridList() {
   return (
     <div className={classes.root}>
       {isMobile && 
-        <>
           <GridList cellHeight={120} cols={3}>
             {tileData.map(tile => (
-              <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.gridList}>
+              <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.imgSizeMobile}>
                 <img src={tile.img} alt={tile.title} onClick={() => {setOpen(true); setImage(tile.img)}}/>
               </GridListTile>
             ))}
           </GridList>
-          <Modal
-            className={classes.modal}
-            open={open}
-            onClose={() => setOpen(false)}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-              timeout: 500,
-            }}
-          >
-            <Fade in={open}>
-              <img src={image} className={classes.imgSizeMobile}/>
-            </Fade>
-          </Modal>
-        </>
       }
       {!isMobile && 
-        <>
           <GridList cols={3}>
             {tileData.map(tile => (
-                <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.gridList}>
+                <GridListTile key={tile.img} cols={tile.cols || 1}>
                   <img src={tile.img} alt={tile.title} onClick={() => {setOpen(true); setImage(tile.img)}}/>
                 </GridListTile>
               ))}
           </GridList>
-          <Modal
-            className={classes.modal}
-            open={open}
-            onClose={() => setOpen(false)}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-              timeout: 500,
-            }}
-          >
-            <Fade in={open}>
-              <img src={image} className={classes.imgSize}/>
-            </Fade>
-          </Modal>
-        </>
       }
-      
+      <Modal
+        className={classes.modal}
+        open={open}
+        onClose={() => setOpen(false)}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <img src={image} className={isMobile ? classes.imgSizeMobile : classes.imgSize}/>
+        </Fade>
+      </Modal>
     </div>
   );
 }
