@@ -4,7 +4,7 @@ import { Grid } from '@material-ui/core';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Content from '../components/content';
+import Content from '../components/Content.jsx';
 
 const NewBookingPage = () => {
   return (

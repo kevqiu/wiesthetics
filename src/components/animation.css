@@ -1,8 +1,65 @@
-.fadeIn {
+.fadeInOg {
     animation: fadeInAnimation 1.5s;
 }
   
 @keyframes fadeInAnimation {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+/* Animation */
+
+@keyframes fadeInUpOg {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUpOg {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animated2 {
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animated3 {
+    animation-delay: 0.75s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUpOg {
+    opacity: 0;
+    animation-name: fadeInUpOg;
+    -webkit-animation-name: fadeInUpOg;
 }
