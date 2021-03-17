@@ -9,6 +9,21 @@ exports.createPages = async ({ actions }) => {
 	});
 
 	createPage({
+		path: `/services`,
+		component: path.resolve(`./src/pages/Services.jsx`),
+	});
+
+	createPage({
+		path: `/gallery`,
+		component: path.resolve(`./src/pages/Gallery.jsx`),
+	});
+
+	createPage({
+		path: `/contact`,
+		component: path.resolve(`./src/pages/contact.jsx`),
+	});
+
+	createPage({
 		path: '/new-booking',
 		component: path.resolve(`src/pages/NewBooking.jsx`)
 	});

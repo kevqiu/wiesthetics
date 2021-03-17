@@ -13,8 +13,8 @@ const classes = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    textAlign: 'center',
-    color: 'black'
+    color: 'black',
+    cursor: 'pointer'
   },
 }));
 
