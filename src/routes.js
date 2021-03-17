@@ -7,6 +7,18 @@ module.exports = [
 		component: path.resolve(`src/pages/Home.jsx`)
 	},
 	{
+		path: '/services',
+		component: path.resolve(`src/pages/Services.jsx`)
+	},
+	{
+		path: '/gallery',
+		component: path.resolve(`src/pages/Gallery.jsx`)
+	},
+	{
+		path: '/contact',
+		component: path.resolve(`src/pages/Contact.jsx`)
+	},
+	{
 		path: '/new-booking',
 		component: path.resolve(`src/pages/NewBooking.jsx`)
 	},
