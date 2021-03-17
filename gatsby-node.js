@@ -20,7 +20,7 @@ exports.createPages = async ({ actions }) => {
 
 	createPage({
 		path: `/contact`,
-		component: path.resolve(`./src/pages/contact.jsx`),
+		component: path.resolve(`./src/pages/Contact.jsx`),
 	});
 
 	createPage({
