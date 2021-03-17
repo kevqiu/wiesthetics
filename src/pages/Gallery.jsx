@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Link } from 'gatsby';
 
-export const Gallery = () => {
+const Gallery = () => {
     return (
         <Layout>
             <SEO title="Gallery "/>
@@ -12,3 +12,5 @@ export const Gallery = () => {
         </Layout>
     )
 }
+
+export default Gallery

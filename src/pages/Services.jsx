@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import { Link } from 'gatsby';
 
 
-export const Services = () => {
+const Services = () => {
     return (
         <Layout>
             <SEO title="Services "/>
@@ -13,3 +13,5 @@ export const Services = () => {
         </Layout>
     )
 }
+
+export default Services

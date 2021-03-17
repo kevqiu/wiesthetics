@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import { Link } from 'gatsby';
 
 
-export const Contact = () => {
+const Contact = () => {
     return (
         <Layout>
             <SEO title="Contact "/>
@@ -13,3 +13,5 @@ export const Contact = () => {
         </Layout>
     )
 }
+
+export default Contact
